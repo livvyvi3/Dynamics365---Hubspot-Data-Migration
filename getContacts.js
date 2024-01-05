@@ -3,11 +3,11 @@ require('dotenv').config()
 const qs = require('querystring');
 const axios = require('axios');
 
-const resource = 'ADD_YOUR_RESOURCE/';
+const resource = 'https://orgbc2d8ecd.crm4.dynamics.com/';
 const contactsEndpoint = `${resource}api/data/v9.2/contacts`;
 const accountsEndpoint = `${resource}api/data/v9.2/accounts`;
 const tokenEndpoint = `https://login.microsoftonline.com/${process.env.TENANT_ID}/oauth2/token`;
-const accessToken = process.env.ACCESS_TOKEN;
+const accessToken = process.env.DYNAMICS_ACCESS_TOKEN;
 
 const requestBody = {
   client_id: process.env.CLIENT_ID,
@@ -34,7 +34,7 @@ const getToken = async () => {
 };
 */
 
-  const getContacts = async () => {
+  const createContact = async () => {
     try {
       let config = {
         method: 'get',
@@ -63,7 +63,7 @@ const getToken = async () => {
     }
   };
   
-getContacts();
+createContact();
 
 
 

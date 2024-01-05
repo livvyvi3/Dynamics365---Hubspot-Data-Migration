@@ -2,7 +2,7 @@ require('dotenv').config()
 const qs = require('querystring');
 const axios = require('axios');
 
-const resource = 'ADD_YOUR_RESOURCE';
+const resource = 'https://orgdc8d1d06.crm4.dynamics.com/';
 const contactsEndpoint = `${resource}api/data/v9.2/contacts`;
 const accountsEndpoint = `${resource}api/data/v9.2/accounts`;
 const tokenEndpoint = `https://login.microsoftonline.com/${process.env.TENANT_ID}/oauth2/token`;
