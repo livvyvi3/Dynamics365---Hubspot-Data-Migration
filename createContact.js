@@ -6,7 +6,7 @@ const hubspotApiKey = process.env.HUBSPOT_API_KEY;
 const hubspotBaseUrl = "https://api.hubapi.com";
 
 const dynamicsAccessToken = process.env.DYNAMICS_ACCESS_TOKEN;
-const dynamicsBaseUrl = "https://ADD_YOUR_RESOURCE/api/data/v9.0";
+const dynamicsBaseUrl = `https://${process.env.RESOURCE}/api/data/v9.0`;
 
 const dynamicsHeaders = {
   "Authorization": `Bearer ${dynamicsAccessToken}`,

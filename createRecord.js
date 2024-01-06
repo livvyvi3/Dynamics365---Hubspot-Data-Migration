@@ -1,9 +1,12 @@
+/* The code below is to create a contact in Microsoft Dynamics 365*/
+
 require('dotenv').config()
 const qs = require('querystring');
 const axios = require('axios');
 
 const resource = `${process.env.RESOURCE}`;
 const contactsEndpoint = `${resource}api/data/v9.2/contacts`;
+const accountsEndpoint = `${resource}api/data/v9.2/accounts`;
 const tokenEndpoint = `https://login.microsoftonline.com/${process.env.TENANT_ID}/oauth2/token`;
 const accessToken = process.env.DYNAMICS_ACCESS_TOKEN;
 
@@ -34,6 +37,7 @@ let config = {
 
 axios.request(config)
   .then(response => {
+    console.log('Contact created:', response.data);
   })
   .catch(error => {
     console.error('Error creating contact:', error.message);
